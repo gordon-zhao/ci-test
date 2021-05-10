@@ -15,4 +15,4 @@ describe('Test the test_button', () => {
   })
 
   async() => {await browser.close();}
-})();
+});
