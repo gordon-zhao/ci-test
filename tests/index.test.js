@@ -1,18 +1,18 @@
 const puppeteer = require('puppeteer');
 
-describe('Test the test _button', () => {
+describe('Test the test_button', () => {
   let page, browser;
   beforeAll(async() => {
     browser = await puppeteer.launch();
     page = await browser.newPage();
     await page.goto('http://localhost');
+    await console.log("Hey Console!");
   }, 5000)
-  console.log("Hey Console!");
   
   it('Did I click the button?', async() => {
       await page.click(".test_button");
       expect.anything(document.getElementById("test_content"));
   })
 
-  await browser.close();
+  async() => {await browser.close();}
 })();
