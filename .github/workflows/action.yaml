@@ -14,5 +14,4 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm i jest puppeteer jest-puppeteer
-    - run: "cd tests; jest"
+    - run: "cd tests; npm i jest puppeteer jest-puppeteer; jest"
