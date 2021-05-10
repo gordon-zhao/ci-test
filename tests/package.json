@@ -5,7 +5,8 @@
     "dependencies": {
         "jest": "*",
         "jest-puppeteer": "*",
-        "pupeeteer": "*"
+        "pupeeteer": "*",
+        "jest-dev-server": "*"
     },
     "name": "web",
     "version": "0.0.1"
