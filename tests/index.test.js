@@ -10,18 +10,20 @@ describe('Test the test_button', () => {
   }, 5000)
 
   it('No button is clicked yet...', async() => {
-    await expect.toBeNull(await page.evaluate(() => {
+    let result = await page.evaluate(() => {
         return document.getElementById("test_content");
-      })
-    );
+      });
+    console.log(await result);
+    await expect.toBeNull(result);
   })
   
   it('Did I just click the button?', async() => {
       await page.click("#test_button");
-      await expect.anything(await page.evaluate(() => {
-          return document.getElementById("test_content");
-        })
-      );
+      let result = await page.evaluate(() => {
+        return document.getElementById("test_content");
+      });
+      console.log(await result);
+      await expect.anything(result);
   })
 
   afterAll(async() => {
