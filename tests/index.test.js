@@ -11,8 +11,10 @@ describe('Test the test_button', () => {
   
   it('Did I click the button?', async() => {
       await page.click(".test_button");
-      expect.anything(document.getElementById("test_content"));
+      await expect.anything(document.getElementById("test_content"));
   })
 
-  async() => {await browser.close();}
+  afterAll(async() => {
+      browser.close();
+  }, 5000)
 });
