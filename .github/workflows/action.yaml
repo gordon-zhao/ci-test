@@ -6,7 +6,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
+        node-version: [14.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -14,4 +14,4 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: "cd tests; npm i jest puppeteer jest-puppeteer; jest"
+    - run: "cd tests; npm test"
