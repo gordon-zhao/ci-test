@@ -6,7 +6,7 @@ describe('Test the test_button', () => {
     browser = await puppeteer.launch();
     page = await browser.newPage();
     await page.goto('http://localhost');
-    await console.log("Hey Console!");
+    console.log("Hey Console!");
   }, 5000)
   
   it('Did I click the button?', async() => {
