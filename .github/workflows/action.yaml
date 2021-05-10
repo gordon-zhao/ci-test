@@ -14,5 +14,4 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: "npx serve -l 127.0.0.1:5000 &"
-    - run: "echo 'Waiting for web server to bring up...'; sleep 15; cd tests; npm install --save-dev jest puppeteer jest-puppeteer; npm test"
+    - run: "npx serve -l 127.0.0.1:5000 & echo 'Waiting for web server to bring up...'; sleep 15; curl 'http://127.0.0.1:5000/index.html'; cd tests; npm install --save-dev jest puppeteer jest-puppeteer; npm test"
