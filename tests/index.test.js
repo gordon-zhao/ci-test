@@ -14,7 +14,7 @@ describe('Test the test_button', () => {
         return document.getElementById("test_content");
       });
     console.log(await result);
-    await expect.toBeNull(result);
+    await expect(result).toBeNull();
   })
   
   it('Did I just click the button?', async() => {
