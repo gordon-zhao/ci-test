@@ -6,5 +6,7 @@
         "jest": "*",
         "jest-puppeteer": "*",
         "pupeeteer": "*"
-    }
+    },
+    "name": "web",
+    "version": "0.0.1"
 }
