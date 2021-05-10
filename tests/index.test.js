@@ -10,9 +10,9 @@ describe('Test the test_button', () => {
   }, 5000)
   
   it('Did I click the button?', async() => {
-      await page.click("#test_button");
+      //await page.click("#test_button");
       await expect.anything(await page.evaluate(() => {
-          return document.getElementById("test_content")
+          return document.getElementById("test_content");
         })
       );
   })
