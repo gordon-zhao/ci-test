@@ -5,7 +5,7 @@ describe('Test the test_button', () => {
   beforeAll(async() => {
     browser = await puppeteer.launch();
     page = await browser.newPage();
-    await page.goto('http://127.0.0.1:5000');
+    await page.goto('http://127.0.0.1:5000/index.html');
     console.log("Hey Console!");
   }, 5000)
   
