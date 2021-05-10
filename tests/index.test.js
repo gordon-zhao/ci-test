@@ -20,6 +20,7 @@ describe('Test the test_button', () => {
   it('Did I just click the button?', async() => {
       await page.click("#test_button");
       let result = await page.evaluate(() => {
+        console.log(document.getElementById("test_content"));
         return document.getElementById("test_content");
       });
       console.log(await result);
