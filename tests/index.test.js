@@ -1,9 +1,9 @@
 const puppeteer = require('puppeteer');
 
 describe('Test the test _button', () => {
-  let page;
-  let browser = await puppeteer.launch();
+  let page, browser;
   beforeAll(async() => {
+    browser = await puppeteer.launch();
     page = await browser.newPage();
     await page.goto('http://localhost');
   }, 5000)
