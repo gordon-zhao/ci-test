@@ -8,9 +8,16 @@ describe('Test the test_button', () => {
     await page.goto('http://127.0.0.1:5000/index.html');
     console.log("Hey Console!");
   }, 5000)
+
+  it('No button is clicked yet...', async() => {
+    await expect.toBeNull(await page.evaluate(() => {
+        return document.getElementById("test_content");
+      })
+    );
+  })
   
-  it('Did I click the button?', async() => {
-      //await page.click("#test_button");
+  it('Did I just click the button?', async() => {
+      await page.click("#test_button");
       await expect.anything(await page.evaluate(() => {
           return document.getElementById("test_content");
         })
