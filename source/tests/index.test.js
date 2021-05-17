@@ -13,7 +13,6 @@ describe('Test the test_button', () => {
     let result = await page.evaluate(() => {
         return document.getElementById("test_content");
       });
-    console.log(await result);
     await expect(result).toBeNull();
   })
   
@@ -21,6 +20,7 @@ describe('Test the test_button', () => {
       await page.evaluate(() => {
         console.log(document.documentElement.innerHTML);
       })
+      await page.waitFor(1000);
       await page.click("#test_button");
       let result = await page.evaluate(() => {
         return document.getElementById("test_content").textContent;
