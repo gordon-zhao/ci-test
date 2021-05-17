@@ -18,7 +18,9 @@ describe('Test the test_button', () => {
   })
   
   it('Did I just click the button?', async() => {
-      await page.waitForSelector('#test_button');
+      console.log(await page.evaluate(() => {
+        return document.getElementById("test_button").textContent;
+      }))
       await page.click("#test_button");
       let result = await page.evaluate(() => {
         return document.getElementById("test_content").textContent;
